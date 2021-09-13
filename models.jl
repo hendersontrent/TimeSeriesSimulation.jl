@@ -68,9 +68,9 @@ noisySineMap()
 function FreitasMap(τ::Int64 = 50)
 
     v0 = rand(Uniform(0, 1), τ)
-    v1 = zeros(τ+3)
+    v1 = zeros(τ)
 
-    for i in 1:τ+3
+    for i in 1:τ
         if i == 1
             v1[i] = 3 * rand(Uniform(0, 1), 1)[1] + 4 * rand(Uniform(0, 1), 1)[1] * (1 - rand(Uniform(0, 1), 1)[1])
         elseif i == 2
@@ -80,7 +80,7 @@ function FreitasMap(τ::Int64 = 50)
         end
     end
     
-    p1 = plot(collect(2:τ), x[2:τ], title = "Freitas map", xlabel = "Time", ylabel = "Value", lw = 2)
+    p1 = plot(collect(1:τ), v1[1:τ], title = "Freitas map", xlabel = "Time", ylabel = "Value", lw = 2)
     return p1
 end
 
