@@ -85,3 +85,30 @@ function FreitasMap(τ::Int64 = 50)
 end
 
 FreitasMap()
+
+#-------------- Random walk ---------------
+
+function RandomWalk(τ::Int64 = 50, trended::Bool = false)
+
+    X = zeros(τ + 1)
+    b = rand(Normal(0, 0.01), 1)
+    ϵ = rand(Normal(0, 1), τ + 1)
+
+    for i in 2:τ+1
+        if trended == true
+            X[i] = X[i-1] + b[1] + ϵ[i]
+        else
+            X[i] = X[i-1] + ϵ[i]
+        end
+    end
+
+    if trended == true
+        p1 = plot(collect(2:τ+1), X[2:τ+1], title = "Trended random walk", xlabel = "Time", ylabel = "Value", lw = 2, legend = :topleft)
+    else
+        p1 = plot(collect(2:τ+1), X[2:τ+1], title = "Random walk", xlabel = "Time", ylabel = "Value", lw = 2, legend = :topleft)
+    end
+    return p1
+end
+
+RandomWalk(50, false)
+RandomWalk(50, true)
