@@ -25,8 +25,8 @@ function GOPY(σ::Float64 = 1.5, τ::Int64 = 1000, x₁::Float64 = 0.1, phase::B
     θ[1] = 0.5
 
     for i in 2:τ
-        x[i] = 2*σ*tanh(x[i-1])*cos(2*π*θ[i-1])
-        #θ[i] = θ[i-1] + ω*(modf(θ[i-1])[1])
+        x[i] = 2 * σ * tanh(x[i-1]) * cos(2 * π * θ[i-1])
+        #θ[i] = θ[i-1] + ω * (modf(θ[i-1])[1])
         θ[i] = mod(θ[i-1] + ω, 1)
     end
 
