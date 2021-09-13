@@ -50,19 +50,16 @@ GOPY(1.5, 1000, 0.1, false)
 
 function noisySineMap(μ::Float64 = 2.4, τ::Int64 = 100, x₁::Float64 = 1.0)
     
-    x = zeros(τ)
     Y = rand(Binomial(1, 0.01), τ)
     η = rand(Uniform(-2, 2), τ)
+    x = zeros(τ)
+    x[1] = x₁
 
-    for i in 1:τ
-        if i == 1
-            x[i] = x₁
-        else
-            x[i] = μ * sin(x[i-1]) + Y[i-1] * η[i-1]
-        end
+    for i in 2:τ
+        x[i] = μ * sin(x[i-1]) + Y[i-1] * η[i-1]
     end
 
-    p1 = plot(collect(2:τ), x[2:τ], title = "Noise-driven sine map", xlabel = "Time", ylabel = "Value")
+    p1 = plot(collect(1:τ), x, title = "Noise-driven sine map", xlabel = "Time", ylabel = "Value")
     return p1
 end
 
@@ -94,27 +91,50 @@ FreitasMap(1000, false)
 
 #-------------- Random walk ---------------
 
-function RandomWalk(τ::Int64 = 50, trended::Bool = false)
+function RandomWalk(τ::Int64 = 100, trended::Bool = false)
 
-    X = zeros(τ + 1)
-    b = rand(Normal(0, 0.01), 1)
-    ϵ = rand(Normal(0, 1), τ + 1)
+    b = rand(Normal(0, 0.01), 1)[1]
+    ϵ = rand(Normal(0, 1), τ)
+    X = zeros(τ)
+    X[1] = ϵ[1]
 
-    for i in 2:τ+1
+    for i in 2:τ
         if trended == true
-            X[i] = X[i-1] + b[1] + ϵ[i]
+            X[i] = X[i-1] + b + ϵ[i]
         else
             X[i] = X[i-1] + ϵ[i]
         end
     end
 
     if trended == true
-        p1 = plot(collect(2:τ+1), X[2:τ+1], title = "Trended random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
+        p1 = plot(collect(1:τ), X, title = "Trended random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
     else
-        p1 = plot(collect(2:τ+1), X[2:τ+1], title = "Random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
+        p1 = plot(collect(1:τ), X, title = "Random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
     end
     return p1
 end
 
-RandomWalk(50, false)
-RandomWalk(50, true)
+RandomWalk(100, true)
+RandomWalk(100, false)
+
+#-------------- Cyclostationary AR process ---------------
+
+function CyclostationaryAR(n::Int64 = 100)
+    
+    τ = 50
+    ϵ = rand(Normal(0, 1), n)
+    T = 10
+    a₁ = 2 * cos(2 * π/ T) * ℯ^ -1 / τ
+    a₂ = -ℯ^ -2 / τ
+    X = zeros(n)
+    X[1] = ϵ[1]
+    X[2] = a₁ * X[1] + ϵ[2]
+
+    for i in 3:n
+        X[i] = a₁ * X[i - 1] + a₂ * X[i - 2] + ϵ[i]
+    end
+
+    p1 = plot(collect(1:n), X, title = "Cyclostationary AR process", xlabel = "Time", ylabel = "Value")
+end
+
+CyclostationaryAR(100)
