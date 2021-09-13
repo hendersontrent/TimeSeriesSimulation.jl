@@ -72,11 +72,11 @@ function FreitasMap(τ::Int64 = 50)
 
     for i in 1:τ+3
         if i == 1
-            v1[i] = 3 * rand(Uniform(0, 1), 1) + 4 * rand(Uniform(0, 1), 1) * (1 .- rand(Uniform(0, 1), 1))
+            v1[i] = 3 * rand(Uniform(0, 1), 1)[1] + 4 * rand(Uniform(0, 1), 1)[1] * (1 - rand(Uniform(0, 1), 1)[1])
         elseif i == 2
-            v1[i] = 3 * v0[i-1] + 4 * rand(Uniform(0, 1), 1) * (1 .- v0[i-1])
+            v1[i] = 3 * v0[i-1] + 4 * rand(Uniform(0, 1), 1)[1] * (1 - v0[i-1])
         else
-            v1[i] = 3 * v0[i-1] + 4 * v0[i-2] * (1 .- v0[i-1])
+            v1[i] = 3 * v0[i-1] + 4 * v0[i-2] * (1 - v0[i-1])
         end
     end
     
