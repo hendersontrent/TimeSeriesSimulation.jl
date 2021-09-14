@@ -1,5 +1,5 @@
-# toker-models
-Builds interesting models in Julia that are specified in the Toker, Sommer, and D'Esposito (2020) paper titled ["A simple method for detecting chaos in nature"](https://www.nature.com/articles/s42003-019-0715-9).
+# ts-system-simulations
+Builds a growing bank of synthetic time series simulations in Julia.
 
 The repository is structured according to a rough categorisation of systems into:
 
