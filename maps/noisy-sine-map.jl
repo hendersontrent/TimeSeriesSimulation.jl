@@ -27,5 +27,3 @@ function noisySineMap(μ::Float64 = 2.4, τ::Int64 = 100, x₁::Float64 = 1.0)
     p1 = plot(collect(1:τ), x, title = "Noise-driven sine map", xlabel = "Time", ylabel = "Value")
     return p1
 end
-
-noisySineMap()

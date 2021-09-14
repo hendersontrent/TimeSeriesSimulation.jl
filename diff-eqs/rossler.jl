@@ -23,7 +23,3 @@ tspan = (0.0, 1000.0)
 
 prob = ODEProblem(RosslerAttractor, u0, tspan, params)
 sol = solve(prob)
-
-# Plot
-
-plot(sol, title = "Rössler system", xlabel = "Time", ylabel = "Value")

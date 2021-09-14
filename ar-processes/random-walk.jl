@@ -29,12 +29,9 @@ function RandomWalk(τ::Int64 = 100, trended::Bool = false)
     end
 
     if trended == true
-        p1 = plot(collect(1:τ), X, title = "Trended random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
+        p1 = plot(collect(1:τ), X, title = "Trended random walk", xlabel = "Time", ylabel = "Value", legend = false)
     else
-        p1 = plot(collect(1:τ), X, title = "Random walk", xlabel = "Time", ylabel = "Value", legend = :topleft)
+        p1 = plot(collect(1:τ), X, title = "Random walk", xlabel = "Time", ylabel = "Value", legend = false)
     end
     return p1
 end
-
-RandomWalk(100, true)
-RandomWalk(100, false)

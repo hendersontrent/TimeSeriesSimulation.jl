@@ -1,5 +1,10 @@
 #------------------------------------------
-# This script specifies a Freitas map
+# This script specifies a Freitas map as 
+# per Freitas, U. S., Letellier, C. & 
+# Aguirre, L. A. Failure in distinguishing 
+# colored noise from chaos using the “noise 
+# titration” technique. Phys. Rev. E 79, 
+# 035201 (2009).
 #------------------------------------------
 
 #------------------------------------------
@@ -30,6 +35,3 @@ function FreitasMap(τ::Int64 = 1000, firstReturn::Bool = false)
     end
     return p1
 end
-
-FreitasMap(1000, true)
-FreitasMap(1000, false)
