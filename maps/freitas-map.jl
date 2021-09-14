@@ -1,5 +1,10 @@
 #------------------------------------------
-# This script specifies a Freitas map
+# This script specifies a Freitas map as 
+# per Freitas, U. S., Letellier, C. & 
+# Aguirre, L. A. Failure in distinguishing 
+# colored noise from chaos using the “noise 
+# titration” technique. Phys. Rev. E 79, 
+# 035201 (2009).
 #------------------------------------------
 
 #------------------------------------------
