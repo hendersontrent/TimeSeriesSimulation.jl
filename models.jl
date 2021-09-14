@@ -16,7 +16,6 @@ Random.seed!(123) # Fix seed for reproduciblity
 
 function GOPY(σ::Float64 = 1.5, τ::Int64 = 1000, x₁::Float64 = 0.1, phase::Bool = true)
 
-    #ω = MathConstants.golden
     ω = (sqrt(5)-1)/2
     x = zeros(τ)
     θ = zeros(τ)
@@ -26,7 +25,6 @@ function GOPY(σ::Float64 = 1.5, τ::Int64 = 1000, x₁::Float64 = 0.1, phase::B
 
     for i in 2:τ
         x[i] = 2 * σ * tanh(x[i-1]) * cos(2 * π * θ[i-1])
-        #θ[i] = θ[i-1] + ω * (modf(θ[i-1])[1])
         θ[i] = mod(θ[i-1] + ω, 1)
     end
 
@@ -131,7 +129,7 @@ function CyclostationaryAR(n::Int64 = 100)
     X[2] = a₁ * X[1] + ϵ[2]
 
     for i in 3:n
-        X[i] = a₁ * X[i - 1] + a₂ * X[i - 2] + ϵ[i]
+        X[i] = a₁ * X[i-1] + a₂ * X[i-2] + ϵ[i]
     end
 
     p1 = plot(collect(1:n), X, title = "Cyclostationary AR process", xlabel = "Time", ylabel = "Value")
