@@ -24,5 +24,3 @@ p = [10.0, 28.0, 8/3]
 
 prob = ODEProblem(myLorenz!, u0, tspan, p)
 sol = solve(prob)
-
-plot(sol, label = ["x" "y" "z"])

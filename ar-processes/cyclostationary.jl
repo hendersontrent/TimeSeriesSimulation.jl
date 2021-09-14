@@ -28,7 +28,5 @@ function CyclostationaryAR(n::Int64 = 100)
         X[i] = a₁ * X[i-1] + a₂ * X[i-2] + ϵ[i]
     end
 
-    p1 = plot(collect(1:n), X, title = "Cyclostationary AR process", xlabel = "Time", ylabel = "Value")
+    p1 = plot(collect(1:n), X, title = "Cyclostationary AR process", xlabel = "Time", ylabel = "Value", legend = false)
 end
-
-CyclostationaryAR(100)

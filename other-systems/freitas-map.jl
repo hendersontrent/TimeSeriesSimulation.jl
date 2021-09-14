@@ -30,6 +30,3 @@ function FreitasMap(τ::Int64 = 1000, firstReturn::Bool = false)
     end
     return p1
 end
-
-FreitasMap(1000, true)
-FreitasMap(1000, false)

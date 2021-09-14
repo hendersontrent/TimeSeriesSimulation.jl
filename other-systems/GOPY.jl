@@ -38,6 +38,3 @@ function GOPY(σ::Float64 = 1.5, τ::Int64 = 1000, x₁::Float64 = 0.1, phase::B
     p3 = plot(p1, p2, layout = (2,1), legend = false)
     return p3   
 end
-
-GOPY(1.5, 1000, 0.1, true)
-GOPY(1.5, 1000, 0.1, false)

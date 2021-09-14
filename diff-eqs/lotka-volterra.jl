@@ -24,7 +24,3 @@ tspan = (0.0, 100.0)
 
 prob = ODEProblem(myLV, u0, tspan, params)
 sol = solve(prob)
-
-# Plot
-
-plot(sol, title = "Lotka-Volterra system", xlabel = "Time", ylabel = "Number")
