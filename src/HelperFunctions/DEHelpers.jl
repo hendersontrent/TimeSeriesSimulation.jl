@@ -19,7 +19,13 @@ end
 
 #----------- Lotka-Volterra ------------
 
+function LotkaVolterraSetup(Δu, u, params, t)
 
+    α, β, γ, δ = params
+
+    Δu[1] = α * u[1] -β * u[1] * u[2]
+    Δu[2] = -δ * u[2]+ γ * u[1] * u[2]
+end
 
 #----------- Rössler ------------
 
