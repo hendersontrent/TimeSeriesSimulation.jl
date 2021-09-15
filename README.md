@@ -2,7 +2,7 @@
 
 [![Coverage](https://codecov.io/gh/hendersontrent/TimeSeriesSimulation.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/hendersontrent/TimeSeriesSimulation.jl)
 
-Functions for simulating numerous types of dynamical systems and time-series processes.
+Automatic simulation of numerous types of dynamical systems and time-series processes.
 
 ## Notes
 

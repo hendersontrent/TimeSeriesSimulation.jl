@@ -17,6 +17,7 @@ include("Map/GrebogiMap.jl")
 include("Map/ChirikovStandardMap.jl")
 include("Other/GOPY.jl")
 include("Other/GaussianNoise.jl")
+include("HelperFunctions/DEHelpers.jl")
 include("Simulation/SimulateSystems.jl")
 
 # Exports
@@ -25,9 +26,9 @@ export ARMA
 export CyclostationaryAR
 export RandomWalk
 export TrendedRandomWalk
-export myLorenz!
-export myLV
-export RosslerAttractor
+export LorenzSystem
+export LotkaVolterraSystem
+export RosslerSystem
 export FreitasMap
 export HenonMap
 export IkedaMap
