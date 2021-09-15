@@ -1,11 +1,10 @@
-# ts-system-simulations
-Builds a growing bank of synthetic time series simulations in Julia.
+# TimeSeriesSimulation
 
-The repository is structured according to a rough categorisation of systems into:
 
-* Autoregressive processes
-* Differential equations
-* Maps
-* Other systems
+[![Coverage](https://codecov.io/gh/hendersontrent/TimeSeriesSimulation.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/hendersontrent/TimeSeriesSimulation.jl)
 
-The *other systems* group may be refactored into more specific folders as more systems are added. The repository is not exhaustive yet, but is being continuously updated with new systems. It is intended to be a living bank of ready-to-use simulated time-series systems written in Julia.
+Functions for simulating numerous types of dynamical systems and time-series processes.
+
+## Ongoing work
+
+This package is a dynamic product and will continue to be iterated and added to over time.
