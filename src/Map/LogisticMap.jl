@@ -2,7 +2,7 @@
 
     LogisticMap(r, x₁, N)
 
-Simulate the logistic map.
+Simulate the logistic map as per R. M. May, Nature 261, pp 459 (1976).
 
     Usage:
 ```julia-repl
