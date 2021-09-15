@@ -29,4 +29,11 @@ end
 
 #----------- Rössler ------------
 
+function RosslerSetup(Δu, u, params, t)
+    
+    a, b, c = params
 
+    Δu[1] = -u[2] - u[3]
+    Δu[2] = u[1] + a * u[2]
+    Δu[3] = b + u[3] * (u[1] - c)
+end

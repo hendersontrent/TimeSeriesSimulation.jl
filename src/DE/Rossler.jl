@@ -1,25 +1,34 @@
-#------------------------------------------
-# This script specifies the Rössler system
-#------------------------------------------
+"""
 
-#------------------------------------------
-# Author Trent Henderson, 14 September 2021
-#------------------------------------------
+    RosslerSystem(a, b, c, u₁, u₂, u₃, N)
 
-using Plots, DifferentialEquations
+Simulate the Rössler system as per O. E. Rössler, Phys. Lett. 57A, pp 397 (1976).
 
-params = (0.2, 0.2, 5.7)
+    Usage:
+```julia-repl
+RosslerSystem(a, b, c, u₁, u₂, u₃, N)
+```
+Arguments:
+- `a`` : Value of a coefficient.
+- `b` : Value of a coefficient.
+- `c` : Value of a coefficient.
+- `u₁` : Starting value of the first system variable.
+- `u₂` : Starting value of the second system variable.
+- `u₃` : Starting value of the third system variable.
+- `N` : Length of the time series.
+"""
+function RosslerSystem(a::Float64 = 0.2, b::Float64 = 0.2, c::Float64 = 5.7, u₁::Float64 = 1.0, u₂::Float64 = -2.0, u₃::Float64 = 0.1, N::Int64 = 1000)
+    
+    # Set up parameters for the ODE
 
-function RosslerAttractor(Δu, u, params, t)
-    a, b, c = params
-
-    Δu[1] = -u[2] - u[3]
-    Δu[2] = u[1] + a * u[2]
-    Δu[3] = b + u[3] * (u[1] - c)
+    u0 = [u₁, u₂, u₃]                       
+    tspan = (0.0, N)                      
+    p = [a, b, c]
+        
+    # Solve the ODE
+        
+    prob = ODEProblem(RosslerSetup, u0, tspan, p)  
+    sol = solve(prob) 
+    v = sol.u
+    return v
 end
-
-u0 = [1.0; 1.0; 1.0]
-tspan = (0.0, 1000.0)
-
-prob = ODEProblem(RosslerAttractor, u0, tspan, params)
-sol = solve(prob)
