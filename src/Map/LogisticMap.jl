@@ -1,12 +1,12 @@
 """
 
-    LogisticMap(r, N)
+    LogisticMap(r, x₁, N)
 
 Simulate the logistic map.
 
     Usage:
 ```julia-repl
-LogisticMap(r, N)
+LogisticMap(r, x₁, N)
 ```
 Arguments:
 - `r` : Value of the coefficient parameter.

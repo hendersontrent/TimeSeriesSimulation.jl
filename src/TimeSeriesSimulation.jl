@@ -14,6 +14,7 @@ include("Map/IkedaMap.jl")
 include("Map/NoisySineMap.jl")
 include("Map/LogisticMap.jl")
 include("Map/GrebogiMap.jl")
+include("Map/ChirikovStandardMap.jl")
 include("Other/GOPY.jl")
 include("Other/GaussianNoise.jl")
 include("Simulation/SimulateSystems.jl")
@@ -33,6 +34,7 @@ export IkedaMap
 export NoisySineMap
 export LogisticMap
 export GrebogiMap
+export ChirikovStandardMap
 export GOPY
 export GaussianNoise
 export SimulateSystems
