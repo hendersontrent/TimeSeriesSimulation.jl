@@ -1,19 +1,19 @@
 """
 
-    GOPY(σ, N, x₁)
+    GOPY(σ, x₁, N)
 
 Simulate the GOPY model.
 
     Usage:
 ```julia-repl
-GOPY(σ, N, x₁)
+GOPY(σ, x₁, N)
 ```
 Arguments:
 - `σ` : Value of the coefficient parameter.
-- `N` : Length of the time series.
 - `x₁` : Initial value at time 1.
+- `N` : Length of the time series.
 """
-function GOPY(σ::Float64 = 1.5, N::Int64 = 1000, x₁::Float64 = 0.1)
+function GOPY(σ::Float64 = 1.5, x₁::Float64 = 0.1, N::Int64 = 1000)
 
     ω = (sqrt(5)-1)/2
     x = zeros(N)
