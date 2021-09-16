@@ -31,6 +31,7 @@ export LotkaVolterraSystem
 export RosslerSystem
 export FreitasMap
 export HenonMap
+export HyperChaoticGenHenonMap
 export IkedaMap
 export NoisySineMap
 export LogisticMap
