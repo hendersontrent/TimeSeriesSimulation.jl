@@ -38,6 +38,9 @@ using Test
     HenonMap_out = HenonMap()
     @test HenonMap_out isa Array
 
+    HyperHenonMap_out = HyperChaoticGenHenonMap()
+    @test HyperHenonMap_out isa Array
+
     IkedaMap_out = IkedaMap()
     @test IkedaMap_out isa Array
 
