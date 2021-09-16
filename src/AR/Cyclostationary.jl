@@ -20,7 +20,7 @@ function CyclostationaryAR(N::Int64 = 1000)
     T = 10
     a₁ = 2 * cos(2 * π/ T) * ℯ^ -1 / τ
     a₂ = -ℯ^ -2 / τ
-    X = zeros(n)
+    X = zeros(N)
     X[1] = ϵ[1]
     X[2] = a₁ * X[1] + ϵ[2]
 

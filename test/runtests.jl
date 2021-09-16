@@ -26,8 +26,8 @@ using Test
     CCMap_out = ChaoticCubicMap()
     @test CCMap_out isa Array
 
-    ChirikovMap_out = ChirikovStandardMap()
-    @test ChirikovMap_out isa Array
+    #ChirikovMap_out = ChirikovStandardMap()
+    #@test ChirikovMap_out isa Array
 
     FreitasMap_out = FreitasMap()
     @test FreitasMap_out isa Array
@@ -59,5 +59,8 @@ using Test
     @test GOPY_out isa Array
 
     #------- Driver -------
+
+    outData = SimulateSystems()
+    @test outData isa DataFrame
 
 end

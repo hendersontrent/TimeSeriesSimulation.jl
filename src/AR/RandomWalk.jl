@@ -17,7 +17,7 @@ function RandomWalk(N::Int64 = 1000)
 
     b = rand(Normal(0, 0.01), 1)[1]
     ϵ = rand(Normal(0, 1), N)
-    X = zeros(τ)
+    X = zeros(N)
     X[1] = ϵ[1]
 
     for i in 2:N
@@ -48,7 +48,7 @@ function TrendedRandomWalk(N::Int64 = 1000)
 
     b = rand(Normal(0, 0.01), 1)[1]
     ϵ = rand(Normal(0, 1), N)
-    X = zeros(τ)
+    X = zeros(N)
     X[1] = ϵ[1]
 
     for i in 2:N
