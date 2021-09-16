@@ -1,6 +1,6 @@
 module TimeSeriesSimulation
 
-using Random, Distributions, DifferentialEquations
+using DataFrames, Random, Distributions, DifferentialEquations
 
 include("AR/ARMA.jl")
 include("AR/Cyclostationary.jl")
@@ -8,6 +8,7 @@ include("AR/RandomWalk.jl")
 include("DE/Lorenz.jl")
 include("DE/LotkaVolterra.jl")
 include("DE/Rossler.jl")
+include("Map/ChaoticCubicMap.jl")
 include("Map/FreitasMap.jl")
 include("Map/HenonMap.jl")
 include("Map/IkedaMap.jl")
@@ -29,6 +30,7 @@ export TrendedRandomWalk
 export LorenzSystem
 export LotkaVolterraSystem
 export RosslerSystem
+export ChaoticCubicMap
 export FreitasMap
 export HenonMap
 export HyperChaoticGenHenonMap
