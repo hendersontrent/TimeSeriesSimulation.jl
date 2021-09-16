@@ -8,7 +8,7 @@
 # Author: Trent Henderson, 15 September 2021
 #-------------------------------------------
 
-#----------- Lorenz ------------
+#----------- Lorenz -----------------
 
 function LorenzSetup(du, u, p, t)
 
@@ -17,7 +17,7 @@ function LorenzSetup(du, u, p, t)
     du[3] = u[1] * u[2] - p[3] * u[3]
 end
 
-#----------- Lotka-Volterra ------------
+#----------- Lotka-Volterra ---------
 
 function LotkaVolterraSetup(Δu, u, params, t)
 
@@ -27,7 +27,7 @@ function LotkaVolterraSetup(Δu, u, params, t)
     Δu[2] = -δ * u[2]+ γ * u[1] * u[2]
 end
 
-#----------- Rössler ------------
+#----------- Rössler ----------------
 
 function RosslerSetup(Δu, u, params, t)
     
