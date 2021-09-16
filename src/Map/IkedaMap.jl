@@ -29,5 +29,7 @@ function IkedaMap(μ::Float64 = 0.6, N::Int64 = 1000)
         x[i] = 1 + μ * (x[i-1] * cos(t) - y[i-1] * sin(t))
         y[i] = μ * (x[i-1] * sin(t) + y[i-1] * cos(t))
     end
-    return x,y
+    
+    ϕ = x + y
+    return ϕ
 end

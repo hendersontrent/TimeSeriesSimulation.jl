@@ -17,18 +17,16 @@ function HenonMap(a::Float64 = 1.4, b::Float64 = 0.3, N::Int64 = 1000)
 
     Random.seed!(123) # Fix seed for reproduciblity
     
-    x = zeros(τ)
-    y = zeros(τ)
-    z = zeros(τ)
+    x = zeros(N)
+    y = zeros(N)
     x[1] = 0.5 * rand(Uniform(0, 1), 1)[1]
     y[1] = 0.5 * rand(Uniform(0, 1), 1)[1]
-    z[1] = 0.5 * rand(Uniform(0, 1), 1)[1]
 
     for i in 2:N
-        x[i] = a - y[i-1]^2 - b * z[i-1]
-        y[i] = x[i-1]
-        z[i] = y[i-1]
+        x[i] = 1 - a * x[i-1]^2 + y[i-1]
+        y[i] = b * x[i-1]
     end
 
-    return x,y,z
+    ϕ = x + y
+    return ϕ
 end

@@ -15,7 +15,7 @@ Arguments:
 - `x₁` : Initial value of x vector at time 1.
 - `N` : Length of the time series.
 """
-function ChaoticCubicMap(f::Float64 = -0.8, Q::Float64 = 0.0, A::Float64 = 1.5, x₁::Float64 = 0.1, N::int64 = 1000)
+function ChaoticCubicMap(f::Float64 = -0.8, Q::Float64 = 0.0, A::Float64 = 1.5, x₁::Float64 = 0.1, N::Int64 = 1000)
 
     ω = (sqrt(5)-1)/2
     x = zeros(N)
