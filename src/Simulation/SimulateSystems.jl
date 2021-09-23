@@ -30,10 +30,17 @@ function SimulateSystems()
     Lorenz_out = DataFrame(values = LorenzSystem(), model = "Lorenz")
     Lorenz_out[!, :values] = [x[1] for x in Lorenz_out.values]
     Lorenz_out[!, :timepoint] = 1:nrow(Lorenz_out)
+    Lorenz_out = Lorenz_out[1:1000, :]
 
     LV_out = DataFrame(values = LotkaVolterraSystem(), model = "Lotka Volterra")
     LV_out[!, :values] = [x[1] for x in LV_out.values]
     LV_out[!, :timepoint] = 1:nrow(LV_out)
+    LV_out = LV_out[1:1000, :]
+
+    Rossler_out = DataFrame(values = RosslerSystem(), model = "Rössler")
+    Rossler_out[!, :values] = [x[1] for x in Rossler_out.values]
+    Rossler_out[!, :timepoint] = 1:nrow(Rossler_out)
+    Rossler_out = Rossler_out[1:1000, :]
 
     #------- Maps ---------
 
@@ -74,7 +81,7 @@ function SimulateSystems()
 
     #------- Concatenate --------
 
-    outData = [ARMA_out; Cyclo_out; RW_out; TRW_out; Lorenz_out; LV_out; CCMap_out; ChirikovMap_out; FreitasMap_out; GrebogiMap_out; HenonMap_out; HyperHenonMap_out; IkedaMap_out; LogisticMap_out; NSMap_out; GN_out; GOPY_out]
+    outData = [ARMA_out; Cyclo_out; RW_out; TRW_out; Lorenz_out; LV_out; Rossler_out; CCMap_out; ChirikovMap_out; FreitasMap_out; GrebogiMap_out; HenonMap_out; HyperHenonMap_out; IkedaMap_out; LogisticMap_out; NSMap_out; GN_out; GOPY_out]
 
     return outData
 
