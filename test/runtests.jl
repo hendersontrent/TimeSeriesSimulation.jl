@@ -19,7 +19,8 @@ using Test
 
     #------- DiffEqs ------
 
-
+    Lorenz_out = LorenzSystem()
+    @test Lorenz_out isa Array
 
     #------- Maps ---------
 

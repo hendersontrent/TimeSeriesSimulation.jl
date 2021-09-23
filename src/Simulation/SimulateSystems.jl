@@ -27,7 +27,13 @@ function SimulateSystems()
 
     #------- DiffEqs ------
 
+    Lorenz_out = DataFrame(values = LorenzSystem(), model = "Lorenz")
+    Lorenz_out[!, :values] = [x[1] for x in Lorenz_out.values]
+    Lorenz_out[!, :timepoint] = 1:nrow(Lorenz_out)
 
+    LV_out = DataFrame(values = LotkaVolterraSystem(), model = "Lotka Volterra")
+    LV_out[!, :values] = [x[1] for x in LV_out.values]
+    LV_out[!, :timepoint] = 1:nrow(LV_out)
 
     #------- Maps ---------
 
@@ -68,7 +74,7 @@ function SimulateSystems()
 
     #------- Concatenate --------
 
-    outData = [ARMA_out; Cyclo_out; RW_out; TRW_out; CCMap_out; ChirikovMap_out; FreitasMap_out; GrebogiMap_out; HenonMap_out; HyperHenonMap_out; IkedaMap_out; LogisticMap_out; NSMap_out; GN_out; GOPY_out]
+    outData = [ARMA_out; Cyclo_out; RW_out; TRW_out; Lorenz_out; LV_out; CCMap_out; ChirikovMap_out; FreitasMap_out; GrebogiMap_out; HenonMap_out; HyperHenonMap_out; IkedaMap_out; LogisticMap_out; NSMap_out; GN_out; GOPY_out]
 
     return outData
 
