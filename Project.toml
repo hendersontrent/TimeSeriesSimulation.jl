@@ -1,7 +1,7 @@
 name = "TimeSeriesSimulation"
 uuid = "93d6a3fe-2b85-4e97-84ac-1f9952feaac1"
 authors = ["Trent Henderson <trent.henderson1@outlook.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
