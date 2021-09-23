@@ -2,7 +2,7 @@
 
     LorenzSystem(σ, ρ, β, u₁, u₂, u₃, N)
 
-Simulate the Lorenz system as per  E. N. Lorenz, J. atmos. Sci. 20, pp 130 (1963).
+Simulate the Lorenz system as per E. N. Lorenz, J. atmos. Sci. 20, pp 130 (1963).
 
     Usage:
 ```julia-repl

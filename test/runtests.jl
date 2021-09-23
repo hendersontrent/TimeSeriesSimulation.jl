@@ -19,7 +19,14 @@ using Test
 
     #------- DiffEqs ------
 
+    Lorenz_out = LorenzSystem()
+    @test Lorenz_out isa Array
 
+    LV_out = LotkaVolterraSystem()
+    @test LV_out isa Array
+
+    Rossler_out = RosslerSystem()
+    @test Rossler_out isa Array
 
     #------- Maps ---------
 
